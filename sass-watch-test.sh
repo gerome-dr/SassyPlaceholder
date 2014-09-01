@@ -1,0 +1,1 @@
+sass --watch Test/_test.scss:Test/test.css -I bower_components

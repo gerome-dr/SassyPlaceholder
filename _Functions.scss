@@ -1,0 +1,10 @@
+
+// v0.0.1
+
+@function sf-placeholder-exists($p-name){
+  @if not index($sf-cache-placeholders, $p-name){
+    @return false;
+  }@else {
+    @return true;
+  }
+}

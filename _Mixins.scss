@@ -1,0 +1,44 @@
+
+// v0.0.1
+
+@mixin sf-add-p($p-name){
+
+  @if (sf-placeholder-exists($p-name) == false){
+
+    @include sf-save-placeholder($p-name);
+
+    // Create Placeholder
+    // $sf-breakpoints a SassyBreakpoint Variable
+    
+    @each $key, $value in $sf-breakpoints{
+
+      // create on root
+      @at-root{
+        @media #{$value}{
+            %#{$key}-#{$p-name}{
+              @content;
+            }
+        }
+      }
+    }
+
+      %#{$p-name}{
+        @content;
+      }
+
+  }
+}
+
+
+@mixin sf-use-p($p-name){
+  @if $sf-current-breakpoint == $sf-default-breakpoint{
+    @extend %#{$p-name} !optional;
+  }@else{
+    @extend %#{$sf-current-breakpoint}-#{$p-name} !optional;
+  }
+}
+
+
+@mixin sf-save-placeholder($p-name){
+  $sf-cache-placeholders: append($sf-cache-placeholders, $p-name) !global;
+}

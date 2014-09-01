@@ -1,0 +1,28 @@
+{
+  "name": "SassyPlaceholder",
+  "version": "0.0.1",
+  "authors": [
+    "johngerome <johngerome@gmail.com>"
+  ],
+  "description": "A Powerful Sass Placeholder.",
+  "main": "_SassyPlaceholder.scss",
+  "keywords": [
+    "sass",
+    "placeholder",
+    "media",
+    "sassyframework",
+    "breakpoint"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/SassyFramework/SassyPlaceholder",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "sassybreakpoint": "~0.0.1"
+  }
+}
